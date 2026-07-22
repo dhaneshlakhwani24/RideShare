@@ -197,16 +197,6 @@ The long-term goal is to transform RideShare into a scalable, production-ready r
 
 ---
 
-# Screenshots
-
-> Screenshots will be added soon.
-
-- Login Page
-- User Dashboard
-- Driver Dashboard
-- Superadmin Dashboard
-
----
 
 # Contributing
 
