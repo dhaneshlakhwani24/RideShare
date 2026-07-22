@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Register Driver | RideShare')}"></head>
+<body class="auth-body simple-page">
+<div class="simple-card wide-card">
+    <div class="auth-header"><h2>Driver Registration</h2><p>Submit driver and vehicle details for superadmin approval.</p></div>
+    <form id="driverRegistrationForm" class="form-grid two-col">
+        <label><span>Full Name</span><input type="text" name="fullName" required></label>
+        <label><span>Mobile Number</span><input type="text" name="mobileNumber" required></label>
+        <label><span>Password</span><input type="password" name="password" required></label>
+        <label><span>License Number</span><input type="text" name="licenseNumber" required></label>
+        <label><span>License Expiry</span><input type="text" name="licenseExpiry"></label>
+        <label><span>National ID / Aadhaar</span><input type="text" name="aadhaarOrNationalId"></label>
+        <label><span>Registration Number</span><input type="text" name="registrationNumber" required></label>
+        <label><span>Vehicle Type</span><input type="text" name="vehicleType" required></label>
+        <label><span>Brand</span><input type="text" name="brand"></label>
+        <label><span>Model</span><input type="text" name="model"></label>
+        <label><span>Color</span><input type="text" name="color"></label>
+        <label><span>Seat Capacity</span><input type="number" name="seatCapacity" min="2" required></label>
+        <label><span>Price per KM</span><input type="number" name="pricePerKm" step="0.01"></label>
+        <div class="full-span action-row">
+            <button class="btn btn-primary" type="submit">Submit Driver Application</button>
+            <a class="btn btn-outline" th:href="@{/login}">Back to Login</a>
+        </div>
+    </form>
+    <div id="messageBox"></div>
+</div>
+<script th:src="@{/js/urls.js}"></script>
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/register-driver.js}"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Register User | RideShare')}"></head>
+<body class="auth-body simple-page">
+<div class="simple-card wide-card">
+    <div class="auth-header"><h2>User Registration</h2><p>Register with mobile number first. More details can be updated later.</p></div>
+    <form id="userRegistrationForm" class="form-grid two-col">
+        <label><span>Full Name</span><input type="text" name="fullName" required></label>
+        <label><span>Mobile Number</span><input type="text" name="mobileNumber" required></label>
+        <label><span>Email</span><input type="email" name="email"></label>
+        <label><span>Password</span><input type="password" name="password" required></label>
+        <div class="full-span action-row">
+            <button class="btn btn-primary" type="submit">Create User Account</button>
+            <a class="btn btn-outline" th:href="@{/login}">Back to Login</a>
+        </div>
+    </form>
+    <div id="messageBox"></div>
+</div>
+<script th:src="@{/js/urls.js}"></script>
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/register-user.js}"></script>
+</body>
+</html>

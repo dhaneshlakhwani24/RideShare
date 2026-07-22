@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="navbar(title, subtitle)" class="topbar">
+    <div>
+        <div class="brand">RideShare</div>
+        <div class="brand-subtitle" th:text="${subtitle}">Smart ride management</div>
+    </div>
+    <div class="topbar-actions">
+        <span class="page-tag" th:text="${title}">Dashboard</span>
+        <button id="logoutBtn" class="btn btn-outline">Logout</button>
+    </div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Login | RideShare')}"></head>
+<body class="auth-body">
+<div class="auth-shell">
+    <div class="hero-panel">
+        <div class="eyebrow">Ride Booking + Shared Journey Platform</div>
+        <h1>Professional booking software for users, drivers, and superadmins.</h1>
+        <p>Drivers can publish shared seats. Users can discover nearby vehicles, request standard rides, or join shared rides moving on the same route.</p>
+        <div class="hero-grid">
+            <div class="glass-card"><h3>User</h3><p>Register by mobile number and search nearby online vehicles.</p></div>
+            <div class="glass-card"><h3>Driver</h3><p>Register vehicle, pass compliance, go online, publish shared rides.</p></div>
+            <div class="glass-card"><h3>Superadmin</h3><p>Approve or reject driver compliance and monitor metrics.</p></div>
+        </div>
+    </div>
+    <div class="auth-card">
+        <div class="auth-header"><h2>Login</h2><p>Use mobile number and password</p></div>
+        <form id="loginForm" class="form-grid">
+            <label><span>Mobile Number</span><input type="text" name="mobileNumber" required></label>
+            <label><span>Password</span><input type="password" name="password" required></label>
+            <button class="btn btn-primary" type="submit">Login</button>
+        </form>
+        <div class="auth-links">
+            <a th:href="@{/register/user}">Register as User</a>
+            <a th:href="@{/register/driver}">Register as Driver</a>
+        </div>
+        <div class="demo-box">
+            <strong>Demo Accounts</strong>
+            <ul><li>Superadmin: 9999999999</li><li>Driver: 8888888888</li><li>User: 7777777777</li></ul>
+            <p>Password: <code>Pass@123</code></p>
+        </div>
+        <div id="messageBox"></div>
+    </div>
+</div>
+<script th:src="@{/js/urls.js}"></script>
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/auth.js}"></script>
+</body>
+</html>

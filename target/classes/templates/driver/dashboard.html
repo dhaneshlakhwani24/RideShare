@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('Driver Dashboard | RideShare')}"></head>
+<body>
+<div class="dashboard-shell">
+    <div th:replace="~{fragments/navbar :: navbar('Driver Dashboard', 'Compliance, location status, shared ride inventory, ride request decisions')}"></div>
+    <main class="content-grid">
+        <section class="panel hero-stats"><h1>Driver Dashboard</h1><p>Update online status, publish shared rides, and manage incoming requests.</p><div class="stats-grid" id="driverStats"></div></section>
+        <section class="panel">
+            <div class="panel-head"><h2>Update Vehicle Location</h2><p>Publish live coordinates and online/offline status</p></div>
+            <form id="locationForm" class="form-grid three-col compact-form">
+                <label><span>Latitude</span><input type="number" step="0.0000001" name="latitude" value="28.6200"></label>
+                <label><span>Longitude</span><input type="number" step="0.0000001" name="longitude" value="77.2200"></label>
+                <label><span>Online</span><select name="online"><option value="true">Online</option><option value="false">Offline</option></select></label>
+                <div class="full-span"><button class="btn btn-primary" type="submit">Update Location</button></div>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="panel-head"><h2>Create Shared Ride</h2><p>Publish route and available seats</p></div>
+            <form id="sharedRideForm" class="form-grid three-col compact-form">
+                <label><span>Vehicle ID</span><input type="number" name="vehicleId" value="1"></label>
+                <label><span>Origin Name</span><input type="text" name="originName" value="Connaught Place"></label>
+                <label><span>Origin Lat</span><input type="number" step="0.0000001" name="originLat" value="28.6315"></label>
+                <label><span>Origin Lng</span><input type="number" step="0.0000001" name="originLng" value="77.2167"></label>
+                <label><span>Destination Name</span><input type="text" name="destinationName" value="India Gate"></label>
+                <label><span>Destination Lat</span><input type="number" step="0.0000001" name="destinationLat" value="28.6129"></label>
+                <label><span>Destination Lng</span><input type="number" step="0.0000001" name="destinationLng" value="77.2295"></label>
+                <label><span>Departure Time</span><input type="datetime-local" name="departureTime"></label>
+                <label><span>Base Fare</span><input type="number" step="0.01" name="baseFare" value="120"></label>
+                <label><span>Available Seats</span><input type="number" name="availableSeats" value="4"></label>
+                <div class="full-span"><button class="btn btn-primary" type="submit">Publish Shared Ride</button></div>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="panel-head"><h2>Pending Ride Requests</h2><p>Accept or reject customer requests</p></div>
+            <div class="table-wrap"><table class="table"><thead><tr><th>Rider</th><th>Type</th><th>Route</th><th>Seats</th><th>Status</th><th>Action</th></tr></thead><tbody id="pendingRequestTable"></tbody></table></div>
+        </section>
+        <section class="panel">
+            <div class="panel-head"><h2>My Shared Rides</h2><p>Seat count reduces after acceptance</p></div>
+            <div class="table-wrap"><table class="table"><thead><tr><th>Route</th><th>Departure</th><th>Seats Left</th><th>Status</th></tr></thead><tbody id="driverRideTable"></tbody></table></div>
+        </section>
+    </main>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</div>
+<script th:src="@{/js/urls.js}"></script>
+<script th:src="@{/js/common.js}"></script>
+<script th:src="@{/js/driver-dashboard.js}"></script>
+</body>
+</html>
